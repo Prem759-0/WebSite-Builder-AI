@@ -13,6 +13,7 @@ type Props = {
 export function Sidebar({ projects, activeProjectId, onSelect, onCreate }: Props) {
   return (
     <aside className="glass flex h-full w-full flex-col rounded-2xl p-3">
+      <div className="mb-2 text-xs uppercase tracking-wide text-white/60">Projects ({projects.length})</div>
       <button
         onClick={onCreate}
         className="mb-3 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-2 text-sm font-medium text-black"

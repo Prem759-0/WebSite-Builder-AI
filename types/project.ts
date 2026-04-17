@@ -4,9 +4,13 @@ export type ProjectFile = {
   language: 'typescript' | 'javascript' | 'css' | 'html' | 'json';
 };
 
+export type ChatRole = 'user' | 'assistant';
+export type ChatMode = 'generate' | 'edit' | 'explain' | 'improve';
+
 export type ChatMessage = {
-  role: 'user' | 'assistant';
+  role: ChatRole;
   content: string;
+  mode?: ChatMode;
 };
 
 export type Project = {
