@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import JSZip from 'jszip';
 import { SignedIn, SignedOut } from '@clerk/nextjs';
 import Link from 'next/link';
+import type { Route } from 'next';
 import { Download, Save } from 'lucide-react';
 import { Sidebar } from '@/components/sidebar';
 import { CodeEditor } from '@/components/code-editor';
@@ -136,7 +137,7 @@ export default function BuilderPage() {
         <main className="grid min-h-screen place-items-center p-6">
           <div className="glass rounded-2xl p-8 text-center">
             <h1 className="text-2xl font-semibold">Sign in required</h1>
-            <Link className="mt-4 inline-block rounded-xl bg-white px-4 py-2 text-black" href="/sign-in">
+            <Link className="mt-4 inline-block rounded-xl bg-white px-4 py-2 text-black" href={"/sign-in" as Route}>
               Continue to sign in
             </Link>
           </div>

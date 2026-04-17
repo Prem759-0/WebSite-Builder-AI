@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { Route } from 'next';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Wand2, Code2, Eye } from 'lucide-react';
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
@@ -18,8 +19,8 @@ export default function LandingPage() {
         <div className="flex items-center gap-2 text-lg font-semibold"><Sparkles className="text-accent2" /> WebSite Builder AI</div>
         <div className="flex items-center gap-3">
           <SignedOut>
-            <Link href="/sign-in" className="rounded-full border border-white/20 px-4 py-2 text-sm">Sign in</Link>
-            <Link href="/builder" className="rounded-full bg-gradient-to-r from-accent to-accent2 px-4 py-2 text-sm font-medium text-black">Get started</Link>
+            <Link href={"/sign-in" as Route} className="rounded-full border border-white/20 px-4 py-2 text-sm">Sign in</Link>
+            <Link href={"/builder" as Route} className="rounded-full bg-gradient-to-r from-accent to-accent2 px-4 py-2 text-sm font-medium text-black">Get started</Link>
           </SignedOut>
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
@@ -45,7 +46,7 @@ export default function LandingPage() {
           Premium AI website builder with chat, code editing, live preview, project history, and one-click export.
         </motion.p>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }} className="mt-8 flex gap-3">
-          <Link href="/builder" className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition hover:scale-105">
+          <Link href={"/builder" as Route} className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition hover:scale-105">
             Launch Builder <ArrowRight size={18} className="transition group-hover:translate-x-1" />
           </Link>
         </motion.div>
