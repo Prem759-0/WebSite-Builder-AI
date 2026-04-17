@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import JSZip from 'jszip';
-import { SignedIn, SignedOut, useAuth } from '@clerk/nextjs';
+import { SignedIn, SignedOut } from '@clerk/nextjs';
 import Link from 'next/link';
 import { Download, Save } from 'lucide-react';
 import { Sidebar } from '@/components/sidebar';
@@ -25,7 +25,6 @@ const starterProject: Project = {
 };
 
 export default function BuilderPage() {
-  const { userId } = useAuth();
   const {
     projects,
     activeProject,
